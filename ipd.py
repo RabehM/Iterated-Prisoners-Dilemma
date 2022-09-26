@@ -96,11 +96,12 @@ class TitForTat (_Prisioner):
             self.got_betrayed = True
         else:
             self.got_betrayed = False
-            
+      
     def play(self):
         if self.got_betrayed:
             return True
         return False
+    
 #GrimTrigger class
 class GrimTrigger(_Prisioner):
     num_grimtrigger = 1
@@ -123,8 +124,7 @@ class GrimTrigger(_Prisioner):
         if self.got_betrayed == True:
             return True
         return False
-
-        
+    
 #CoinFlipper class
 class Coinflipper(_Prisioner):
     num_coinflipper = 1
@@ -137,7 +137,6 @@ class Coinflipper(_Prisioner):
     def play(self):
         x = random.random()
         return(x <= 0.5)
-
         
 #DieRoller class
 class Dieroller (_Prisioner):
@@ -150,9 +149,7 @@ class Dieroller (_Prisioner):
         
     def play(self):
         x = random.random()
-        return(x <= 1/6)
-       
-            
+        return(x <= 1/6)     
 
 class Dilemma:
 
