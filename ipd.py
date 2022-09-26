@@ -40,7 +40,7 @@ def main():
         print(prisoner)
 
 #Prisoner class
-class _Prisioner():
+class Prisoner():
     def __init__(self):
         self.points = 0
     def update(self,was_betrayed,earned_points):
@@ -60,7 +60,7 @@ class _Prisioner():
         return f"{self.get_name()}: {self.points} points"
         
 #Cooperator class
-class Cooperator(_Prisioner):
+class Cooperator(Prisoner):
     num_cooperator = 1
     def __init__(self):
         super().__init__()
@@ -70,7 +70,7 @@ class Cooperator(_Prisioner):
         return False
  
 #Defector class
-class Defector(_Prisioner):
+class Defector(Prisoner):
     num_defector = 1
     def __init__(self):
         super().__init__()
@@ -80,7 +80,7 @@ class Defector(_Prisioner):
         return True
 
 #TitForTat class
-class TitForTat (_Prisioner):
+class TitForTat (Prisoner):
     num_T4T = 1
     def __init__(self):
         super().__init__()
@@ -103,7 +103,7 @@ class TitForTat (_Prisioner):
         return False
     
 #GrimTrigger class
-class GrimTrigger(_Prisioner):
+class GrimTrigger(Prisoner):
     num_grimtrigger = 1
     
     def __init__(self):
@@ -126,7 +126,7 @@ class GrimTrigger(_Prisioner):
         return False
     
 #CoinFlipper class
-class Coinflipper(_Prisioner):
+class Coinflipper(Prisoner):
     num_coinflipper = 1
     
     def __init__(self):
@@ -139,7 +139,7 @@ class Coinflipper(_Prisioner):
         return(x <= 0.5)
         
 #DieRoller class
-class Dieroller (_Prisioner):
+class Dieroller (Prisoner):
     num_dieroller = 1
     
     def __init__(self):
@@ -152,7 +152,6 @@ class Dieroller (_Prisioner):
         return(x <= 1/6)     
 
 class Dilemma:
-
     def __init__(self,both_coop_outcome,both_defect_outcome,betrayer_outcome,betrayed_outcome):
         self.both_coop_outcome = both_coop_outcome
         self.both_defect_outcome = both_defect_outcome
